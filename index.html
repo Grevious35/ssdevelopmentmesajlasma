@@ -29,13 +29,17 @@
 
 
 <script>
-document.getElementById('inputUsername').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const username = document.querySelector('input[name="username"]').value;
-    if (username) {
-        window.location.href = `./welcome.html?username=${encodeURIComponent(username)}`;
-    }
-});
+ document.getElementById('inputUsername').addEventListener('submit', function(event) {
+            event.preventDefault(); // Formun varsayılan submit davranışını engelle
+
+            // Kullanıcı adını al
+            const username = document.querySelector('input[name="username"]').value;
+
+            // Yönlendirme URL'si
+            const redirectUrl = "https://ssdevelopmentmesajlasma.vercel.app?username=" + encodeURIComponent(username);
+
+            // Yönlendirme yap
+            window.location.href = redirectUrl;
 </script>
 
 	
